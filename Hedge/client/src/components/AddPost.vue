@@ -2,28 +2,15 @@
 <v-app>
 <v-container>
   <div class="posts">
-    <h1>Add Post</h1>
-      <!-- <div class="form">
-        <div>
-          <input type="text" name="title" placeholder="TITLE" v-model="title">
-        </div>
-        <div>
-          <textarea rows="15" cols="15" placeholder="DESCRIPTION" v-model="description"></textarea>
-        </div>
-        <div>
-          <button class="app_post_btn" @click="addPost">Add</button>
-        </div>
-      </div> -->
 
   <form>
   <div v-if="step === 1">
 
-    <h1>Step One</h1>
-<v-switch v-model="services" label="John" value="John"></v-switch>
-    <v-switch v-model="services" label="Jacob" value="Jacob"></v-switch>
+    <h1>Services</h1>
+      <v-switch v-for="service in services" :key="service.id" v-model="services" :label="service.label" :value="service.value"></v-switch>
 <br>
 
-<v-form v-model="valid">
+<v-form>
     <v-text-field
       v-model="name"
       label="Name"
@@ -130,7 +117,14 @@ export default {
       menu: false,
       modal: false,
       menu2: false,
-      services: []
+      services: [
+        {id: 1, value: 'mowBagged', label: 'Mow - Bagged (+$30)', price: 30},
+        {id: 2, value: 'mowNotBagged', label: 'Mow - Not bagged (+$25)', price: 25},
+        {id: 3, value: 'weedeat', label: 'Weedeat (+$10)', price: 10},
+        {id: 4, value: 'edge', label: 'Edge (+$10)', price: 10},
+        {id: 5, value: 'flowerbeds', label: 'Weed flowerbeds (+$15)', price: 15},
+        {id: 6, value: 'waterplants', label: 'Water plants (+$10)', price: 10},
+        ]
     }
   },
   methods: {
@@ -156,7 +150,6 @@ export default {
     submit() {
       alert('Submit to blah and show blah and etc.');      
     }
-
   }
 }
 </script>

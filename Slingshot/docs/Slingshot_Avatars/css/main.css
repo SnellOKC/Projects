@@ -1,0 +1,157 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  /* background: url(/assets/bg.png) no-repeat bottom center fixed; */
+  background-color: #F9FDFF;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#create-new-text {
+	font-size: 20px;
+	color: #464C4E;
+	letter-spacing: 1px;
+	text-align: left;
+	font-weight: 700;
+	margin: 50px;
+}
+#create-new-box {
+	background: #FFFFFF;
+	box-shadow: -11px 9px 21px 0 #DAE2ED;
+	border-radius: 4px;
+	width: 240px;
+	height: 375px; 
+}
+
+.contest-types { 
+	border: 1px solid #BCCED4;
+	border-radius: 4px;
+	color: #1B2437;
+	padding: 10px; 
+	margin: 20px; 
+	width: 100px; 
+	background-color: #F6F6F6;
+	position: relative;
+}
+
+.contest-types:hover, .contest-types-selected {
+	border: 1px solid #5697FC;
+	background-color: #FFFFFF;
+}
+
+svg {
+  overflow: visible;
+}
+
+svg#team-contest, svg#team-contest, svg#team-contest {
+	width: 100px;
+}
+
+#group:hover #girl1, #group:hover #girl2, #group:hover #boy1 {
+	animation-duration: 0.4s;
+	animation-name: animateAvatar;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transition-timing-function: ease-in-out;
+}
+
+#group:hover #boy1 {
+	animation-delay: 0.16s;
+
+}
+
+#group:hover #girl2 {
+	animation-delay: 0.33s;
+}
+
+#group:hover #shadow_girl1, #group:hover #shadow_girl2, #group:hover #shadow_boy1 {
+	animation-duration: 0.4s;
+	animation-name: animateShadow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transition-timing-function: ease-in-out;
+}
+
+#group:hover #shadow_boy1 {
+	animation-delay: 0.16s;
+}
+
+#group:hover #shadow_girl2 {
+	animation-delay: 0.33s;
+}
+
+@keyframes animateAvatar {
+	from {
+		transform: translateY(0)
+	}
+	to {
+		transform: translateY(-5px)
+	}
+}
+
+@keyframes animateShadow {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #5697FC;
+  fill: none;
+  animation: stroke .6s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
+}
+
+.checkmark {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #5697FC;
+	animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+	
+
+}
+
+.checkmark__check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s cubic-bezier(0.650, 0.000, 0.450, 1.000) .8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #5697FC;
+  }
+}

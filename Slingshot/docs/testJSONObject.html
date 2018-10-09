@@ -1,0 +1,35 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+var movies = [
+  {"id":1, "name":"Ice Age 3", "language":"English", "year":"2012"},
+  {"id":1, "name":"Ice Age 3", "language":"French", "year":"2011"},
+  {"id":1, "name":"Ice Age 3", "language":"German", "year":"2013"},
+  {"id":2, "name":"Ice Age 4", "language":"German", "year":"2013"}
+];
+
+function convert(arr) {
+    return $.map(unique(arr), function(id){
+        return {
+            name: name,
+            id: id,
+            details: $.grep(arr, function(item){
+                return item.id == id
+            })
+        } 
+    });
+}
+
+function unique(arr) {
+    var result = [];
+    $.map(arr, function(item){
+        if ($.inArray(item.id, result))
+            result.push(item.id);
+    })
+    return result;
+}
+
+console.log(convert(movies));
+</script>

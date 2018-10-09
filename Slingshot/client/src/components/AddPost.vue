@@ -19,6 +19,7 @@
 import PostsService from '@/services/PostsService'
 export default {
   name: 'addpost',
+  test: 'hi',
   data () {
     return {
       title: '',

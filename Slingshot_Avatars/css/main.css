@@ -1,0 +1,272 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: url(/assets/bg.png) no-repeat bottom center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.contest-types { 
+	border: 2px solid #BCCED4;
+	border-radius: 4px;
+	color: #1B2437;
+	padding: 10px; 
+	margin: 20px; 
+	width: 100px; 
+	background-color: #F9FDFF;
+	position: relative;
+}
+
+.contest-types:before {
+	content: '';
+	width: 2px;
+	height: 2px;
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	display: none;
+}
+
+.contest-types:after {
+	content: '';
+	position: absolute;
+	display: block;
+	background-color: #5697fc;
+}
+
+.contest-types:hover, .contest-types-selected {
+	border: 2px solid #5697FC;
+	animation: border 0.5s ease-out 1;
+}
+
+svg {
+  width: 100px;
+  overflow: visible;
+}
+
+#group:hover #girl1, #group:hover #girl2, #group:hover #boy1 {
+	animation-duration: 0.4s;
+	animation-name: animateAvatar;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transition-timing-function: ease-in-out;
+}
+
+#group:hover #boy1 {
+	animation-delay: 0.16s;
+
+}
+
+#group:hover #girl2 {
+	animation-delay: 0.33s;
+}
+
+#group:hover #shadow_girl1, #group:hover #shadow_girl2, #group:hover #shadow_boy1 {
+	animation-duration: 0.4s;
+	animation-name: animateShadow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transition-timing-function: ease-in-out;
+}
+
+#group:hover #shadow_boy1 {
+	animation-delay: 0.16s;
+}
+
+#group:hover #shadow_girl2 {
+	animation-delay: 0.33s;
+}
+
+@keyframes animateAvatar {
+	from {
+		transform: translateY(0)
+	}
+	to {
+		transform: translateY(-5px)
+	}
+}
+
+@keyframes animateShadow {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #5697FC;
+  fill: none;
+  animation: stroke .6s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
+}
+
+.checkmark {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #5697FC;
+	animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+	
+
+}
+
+.checkmark__check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s cubic-bezier(0.650, 0.000, 0.450, 1.000) .8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #5697FC;
+  }
+}
+
+.contest-types:hover:after {
+  border-radius: 4px;
+	animation: border-after 0.5s ease-in-out 1;
+}
+
+.contest-types:hover:before {
+	display: block;
+}
+
+@keyframes border {
+	3%, 24% {
+		border-color: #BCCED4;
+	}
+
+	25% {
+		border-top-color: #5697fc;
+	}
+
+	49% {
+		border-right-color: #BCCED4;
+	}
+
+	50% {
+		border-right-color: #5697fc;
+	}
+
+	74% {
+		border-bottom-color: #BCCED4;
+	}
+
+	75% {
+		border-bottom-color: #5697fc;
+	}
+
+	99% {
+		border-left-color: #BCCED4;
+	}
+
+	100% {
+		border-color: #5697fc;
+	}
+}
+
+@keyframes border-after {
+	0% {
+		height: 2px;
+		width: 0;
+		top: -2px;
+		left: -2px;
+		right: auto;
+		bottom: auto;
+	}
+
+	24.99% {
+		width: calc(100% + 2px);
+		height: 2px;
+		top: -2px;
+		left: -2px;
+		right: auto;
+		bottom: auto;
+	}
+
+	25% {
+		width: 2px;
+		height: 0;
+		top: -2px;
+		right: -2px;
+		left: auto;
+		bottom: auto;
+	}
+
+	49.99% {
+		width: 2px;
+		height: calc(100% + 2px);
+		top: -2px;
+		right: -2px;
+		left: auto;
+		bottom: auto;
+	}
+
+	50% {
+		width: 0;
+		height: 2px;
+		bottom: -2px;
+		right: -2px;
+		top: auto;
+		left: auto;
+	}
+
+	74.99% {
+		width: calc(100% + 2px);
+		height: 2px;
+		bottom: -2px;
+		right: -2px;
+		top: auto;
+		left: auto;
+	}
+
+	75% {
+		width: 2px;
+		height: 0;
+		bottom: -2px;
+		left: -2px;
+		right: auto;
+		top: auto;
+	}
+
+	100% {
+		width: 2px;
+		height: calc(100% + 2px);
+		bottom: -2px;
+		left: -2px;
+		right: auto;
+		top: auto;
+	}
+}
